@@ -8,4 +8,7 @@
 
 .username {
     margin-left: auto;
+    height: 100%;
+    width: 100px;
+    background: yellow;
 }
