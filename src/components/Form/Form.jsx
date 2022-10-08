@@ -1,10 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useTelegram } from '../../hooks/useTelegram';
 import cl from './Form.module.css'
 
 export const Form = () => {
     const [country, setCountry] = useState('');
     const [city, setCity] = useState('');
     const [gender, setGender] = useState('');
+    const {tg} = useTelegram();
+
+    useEffect(() => {
+        tg.MainButton.setParams({
+            text: 'Send data'
+        })
+    }, [])
+
+    useEffect(() => {
+        if(!city || !country || !gender) {
+            tg.MainButton.disable();
+        } else {
+            tg.MainButton.enable();
+        }
+    }, [country, city])
 
     const onChangeCountry = (e) => {
         setCountry(e.target.value);
