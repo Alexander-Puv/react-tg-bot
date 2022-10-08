@@ -4,8 +4,8 @@ import { Button } from '../Button/Button';
 import cl from './Header.module.css';
 
 export const Header = () => {
-    const {user, onClose} = useTelegram();
-    alert(user);
+    const {tg, user, onClose} = useTelegram();
+    alert(`${tg}\n${user}\n${tg.initData}`);
     
     return (
         <div className={cl.header}>
