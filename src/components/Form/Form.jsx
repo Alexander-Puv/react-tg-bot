@@ -16,9 +16,9 @@ export const Form = () => {
 
     useEffect(() => {
         if(!city || !country || !gender) {
-            tg.MainButton.disable();
+            tg.MainButton.hide();
         } else {
-            tg.MainButton.enable();
+            tg.MainButton.show();
         }
     }, [country, city])
 
