@@ -7,7 +7,6 @@ export const Form = () => {
     const [city, setCity] = useState('');
     const [gender, setGender] = useState('');
     const {tg} = useTelegram();
-    alert('hey')
 
     useEffect(() => {
         tg.MainButton.setParams({
