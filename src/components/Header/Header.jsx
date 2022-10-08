@@ -5,13 +5,13 @@ import cl from './Header.module.css';
 
 export const Header = () => {
     const {user, onClose} = useTelegram();
-    alert(`${user?.username}`);
+    console.log(user);
     
     return (
         <div className={cl.header}>
             <Button onClick={onClose}>Close</Button>
             <span className={cl.username}>
-                {user?.username}
+                {user?.first_name}
             </span>
         </div>
     )
