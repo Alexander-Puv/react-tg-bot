@@ -1,12 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useTelegram } from '../../hooks/useTelegram';
 import cl from './Form.module.css'
 
 export const Form = () => {
     const [country, setCountry] = useState('');
     const [city, setCity] = useState('');
-    const [gender, setGender] = useState('');
+    const [gender, setGender] = useState('male');
     const {tg} = useTelegram();
+
+    const onSendData = useCallback(() => {
+        const data = {
+            country,
+            city,
+            gender
+        }
+        tg.sendData(JSON.stringify(data));
+    }, [])
+
+    useEffect(() => {
+        tg.onEvent('mainButtonClicked', onSendData);
+        return () => {
+            tg.offEvent('mainButtonClicked', onSendData);
+        }
+    })
 
     useEffect(() => {
         tg.MainButton.setParams({
@@ -51,7 +67,6 @@ export const Form = () => {
                 onChange={onChangeCity}
             />
             <select className={cl.select} value={gender} onChange={onChangeGender}>
-                <option selected disabled>Select gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
