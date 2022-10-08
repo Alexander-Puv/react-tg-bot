@@ -5,7 +5,7 @@ import cl from './Header.module.css';
 
 export const Header = () => {
     const {user, onClose} = useTelegram();
-    console.log(user);
+    alert(user);
     
     return (
         <div className={cl.header}>
