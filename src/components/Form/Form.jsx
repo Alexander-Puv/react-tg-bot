@@ -15,7 +15,7 @@ export const Form = () => {
             gender
         }
         tg.sendData(JSON.stringify(data));
-    }, [])
+    }, [country, city, gender])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData);
