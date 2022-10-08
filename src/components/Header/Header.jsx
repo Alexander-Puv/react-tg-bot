@@ -4,13 +4,14 @@ import { Button } from '../Button/Button';
 import cl from './Header.module.css';
 
 export const Header = () => {
-    const {tg, user, onClose} = useTelegram();
+    const {user, onClose} = useTelegram();
+    console.log(user);
     
     return (
         <div className={cl.header}>
             <Button onClick={onClose}>Close</Button>
             <span className={cl.username}>
-                {tg.initDataUnsafe?.user?.username}
+                {user?.username}
             </span>
         </div>
     )
