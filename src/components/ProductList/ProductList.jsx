@@ -14,13 +14,13 @@ const getTotalPrice = (items = []) => {
 export const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const params = useParams();
-    const {tg} = useTelegram();
+    const {tg, queryId} = useTelegram();
 
     const onSendData = useCallback(() => {
         const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
-
+            queryId
         }
         fetch('http://localhost:8000', {
             method: 'POST',
