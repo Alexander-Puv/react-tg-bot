@@ -42,7 +42,7 @@ export const CategoryList = (/* category */) => {
                 <Category
                     key={item.id}
                     category={item}
-                    link={link}
+                    link={'/:id'}
                     /* onAdd={onAdd} */
                     className={cl.item}
                 />
