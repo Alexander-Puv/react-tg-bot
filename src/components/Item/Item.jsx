@@ -7,7 +7,7 @@ export const Item = ({item, className, link, onAdd}) => {
     const navigate = useNavigate()
     
     const onAddHandler = () => {
-        onAdd(category);
+        onAdd(item);
     }
 
     return (
