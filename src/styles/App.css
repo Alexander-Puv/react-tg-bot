@@ -11,4 +11,5 @@ body {
 
 a {
     color: var(--tg-theme-link-color);
+    text-decoration: none;
 }

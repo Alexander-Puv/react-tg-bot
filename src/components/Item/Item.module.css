@@ -1,4 +1,4 @@
-.category {
+.item {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--tg-theme-button-color);
@@ -14,13 +14,10 @@
 }
 
 .title {
+    margin-top: 10px;
     text-align: center;
 }
 
-/* .description {
-    font-size: 0.8em;
-}
-
-.addBtn {
+.add-btn {
     width: 100%;
-} */
+}
