@@ -5,6 +5,12 @@ import { useTelegram } from '../../hooks/useTelegram';
 import { useParams } from 'react-router-dom';
 import { products } from '../../products/products';
 
+const getTotalPrice = (items = []) => {
+    return items.reduce((acc, item) => {
+        return acc += item.price
+    }, 0)
+}
+
 export const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const params = useParams();
@@ -22,8 +28,13 @@ export const ProductList = () => {
 
         setAddedItems(newItems);
 
-        if (newItems.length) {
-
+        if (newItems.length === 0) {
+            tg.MainButton.hide();
+        } else {
+            tg.MainButton.show();
+            tg.MainButton.setParams({
+                text: `Buy ${newItems.length} items for ${getTotalPrice(newItems)}`
+            })
         }
     }
 

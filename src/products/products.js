@@ -1,6 +1,6 @@
 export const products = [
     [
-        {id: '1', title: 'Special Super Cool T-Shirt', price: 49.99},
+        {id: '1', title: 'Super Cool T-Shirt', price: 49.99},
         {id: '2', title: 'Black T-Shirt', price: 19.99},
         {id: '3', title: 'Red T-Shirt', price: 19.99},
         {id: '4', title: 'Green T-Shirt', price: 19.99},
@@ -8,7 +8,7 @@ export const products = [
         {id: '6', title: 'White T-Shirt', price: 19.99},
     ],
     [
-        {id: '1', title: 'Special Super Cool Jacket', price: 199.99},
+        {id: '1', title: 'Super Cool Jacket', price: 199.99},
         {id: '2', title: 'Black Jacket', price: 79.99},
         {id: '3', title: 'Red Jacket', price: 79.99},
         {id: '4', title: 'Green Jacket', price: 79.99},
@@ -16,7 +16,7 @@ export const products = [
         {id: '6', title: 'White Jacket', price: 79.99},
     ],
     [
-        {id: '1', title: 'Special Super Cool Coat', price: 199.99},
+        {id: '1', title: 'Super Cool Coat', price: 199.99},
         {id: '2', title: 'Black Coat', price: 129.99},
         {id: '3', title: 'Red Coat', price: 129.99},
         {id: '4', title: 'Green Coat', price: 129.99},
@@ -24,7 +24,7 @@ export const products = [
         {id: '6', title: 'White Coat', price: 129.99},
     ],
     [
-        {id: '1', title: 'Special Super Cool Sweatshirt', price: 159.99},
+        {id: '1', title: 'Super Cool Sweatshirt', price: 159.99},
         {id: '2', title: 'Black Sweatshirt', price: 49.99},
         {id: '3', title: 'Red Sweatshirt', price: 49.99},
         {id: '4', title: 'Green Sweatshirt', price: 49.99},
@@ -32,7 +32,7 @@ export const products = [
         {id: '6', title: 'White Sweatshirt', price: 49.99},
     ],
     [
-        {id: '1', title: 'Special Super Cool Hoodie', price: 99.99},
+        {id: '1', title: 'Super Cool Hoodie', price: 99.99},
         {id: '2', title: 'Black Hoodie', price: 49.99},
         {id: '3', title: 'Red Hoodie', price: 49.99},
         {id: '4', title: 'Green Hoodie', price: 49.99},
@@ -40,7 +40,7 @@ export const products = [
         {id: '6', title: 'White Hoodie', price: 49.99},
     ],
     [
-        {id: '1', title: 'Special Super Cool Jeans', price: 99.99},
+        {id: '1', title: 'Super Cool Jeans', price: 99.99},
         {id: '2', title: 'Black Jeans', price: 49.99},
         {id: '3', title: 'Red Jeans', price: 49.99},
         {id: '4', title: 'Green Jeans', price: 49.99},
@@ -48,7 +48,7 @@ export const products = [
         {id: '6', title: 'White Jeans', price: 49.99},
     ],
     [
-        {id: '1', title: 'Special Super Cool Pants', price: 99.99},
+        {id: '1', title: 'Super Cool Pants', price: 99.99},
         {id: '2', title: 'Black Pants', price: 49.99},
         {id: '3', title: 'Red Pants', price: 49.99},
         {id: '4', title: 'Green Pants', price: 49.99},
@@ -56,7 +56,7 @@ export const products = [
         {id: '6', title: 'White Pants', price: 49.99},
     ],
     [
-        {id: '1', title: 'Special Super Cool Shorts', price: 49.99},
+        {id: '1', title: 'Super Cool Shorts', price: 49.99},
         {id: '2', title: 'Black Shorts', price: 29.99},
         {id: '3', title: 'Red Shorts', price: 29.99},
         {id: '4', title: 'Green Shorts', price: 29.99},
