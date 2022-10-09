@@ -1,7 +1,7 @@
 import React from 'react';
 import cl from './Category.module.css';
 
-export const Category = ({category, className, onAdd}) => {
+export const Category = ({category, className, /* onAdd */}) => {
     /* const onAddHandler = () => {
         onAdd(category);
     } */

@@ -3,7 +3,6 @@
     flex-direction: column;
     border: 1px solid var(--tg-theme-button-color);
     padding: 15px;
-    width: 170px;
 }
 
 .img {
@@ -14,10 +13,14 @@
     background: var(--tg-theme-button-color);
 }
 
-.description {
+.title {
+    text-align: center;
+}
+
+/* .description {
     font-size: 0.8em;
 }
 
 .addBtn {
     width: 100%;
-}
+} */
