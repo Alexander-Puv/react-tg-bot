@@ -37,7 +37,6 @@ export const CategoryList = (/* category */) => {
 
     return (
         <div className={cl.list}>
-            {window.innerWidth}
             {categories.map(item => (
                 <Category
                     key={item.id}
