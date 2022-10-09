@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import cl from './Item.module.css';
 
 export const Item = ({item, className, link, onAdd}) => {
+    const [isInCart, setIsInCart] = useState(false);
     const navigate = useNavigate()
     
     const onAddHandler = () => {
         onAdd(item);
+        if (!isInCart) {
+            setIsInCart(true);
+        } else {
+            setIsInCart(false);
+        }
     }
 
     return (
@@ -24,7 +30,7 @@ export const Item = ({item, className, link, onAdd}) => {
             <div className={cl.price}>
                 <span>Price: <b>{item.price}$</b></span>
             </div>
-            <Button className={cl.addBtn} onClick={onAddHandler}>Add to cart</Button>
+            <Button className={cl.addBtn} onClick={onAddHandler}>{!isInCart ? 'Add to cart' : 'Remove from cart'}</Button>
         </div>}</>
     )
 }
