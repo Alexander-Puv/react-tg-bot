@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useTelegram } from '../../hooks/useTelegram'
 import { Category } from '../Category/Category'
 import cl from './CategoryList.module.css'
 
-const products = [
+const categories = [
     {id: '1', category: 'T-shirt', /* price: '19.99', description: 'White' */},
     {id: '2', category: 'Jacket', /* price: '79.99', description: '' */},
     {id: '3', category: 'Coat', /* price: '129.99', description: 'It will not torn in 3 days!!!' */},
@@ -13,12 +14,33 @@ const products = [
     {id: '8', category: 'Shorts', /* price: '24.99', description: '' */},
 ]
 
-export const CategoryList = () => {
+export const CategoryList = (category) => {
+    const [addedItems, setAddedItems] = useState([]);
+    const {tg} = useTelegram();
+
+    const onAdd = () => {
+        const alreadyAdded = addedItems.find(item => item.id === category.id);
+        let newItems = [];
+
+        if (alreadyAdded) {
+            newItems = addedItems.filter(item => item.id !== category.id);
+        } else {
+            newItems = [...addedItems, category];
+        }
+
+        setAddedItems(newItems);
+
+        if (newItems.length) {
+
+        }
+    }
+
     return (
         <div className={cl.list}>
-            {products.map(item => (
-                <Category 
-                    product={item}
+            {categories.map(item => (
+                <Category
+                    key={item.id}
+                    category={item}
                     onAdd={onAdd}
                     className={cl.item}
                 />
