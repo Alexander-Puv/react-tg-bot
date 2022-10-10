@@ -12,6 +12,7 @@ export const ProductList = () => {
     const {addedItems, setAddedItems, getTotalPrice} = useContext(ProductsContext);
 
     const onAdd = (product) => {
+        /* products[params.id-1]; */
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
 
