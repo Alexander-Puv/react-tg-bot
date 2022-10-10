@@ -10,7 +10,6 @@ export const ProductList = () => {
     const params = useParams();
     const {tg} = useTelegram();
     const {addedItems, setAddedItems, getTotalPrice} = useContext(ProductsContext);
-    console.log(addedItems);
 
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
