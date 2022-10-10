@@ -11,11 +11,13 @@ export const Header = () => {
     return (
         <div className={cl.header}>
             {window.location.pathname !== '/' ?
-                <Button onClick={() => navigate('/')}>Back</Button>
+                <>
+                    <Button onClick={() => navigate('/')}>Back</Button>
+                    <Button onClick={onClose}>Close</Button>
+                </>
             :
-                <></>
+                <Button onClick={onClose} style={{alignSelf: 'right'}}>Close</Button>
             }
-            <Button onClick={onClose}>Close</Button>
         </div>
     )
 }
