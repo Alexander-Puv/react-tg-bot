@@ -19,6 +19,7 @@ function App() {
     const {tg, queryId} = useTelegram();
 
     const onSendData = useCallback(() => {
+        console.log('3');
         const data = {
             products: addedItems,
             totalPrice: getTotalPrice(addedItems),
@@ -31,9 +32,11 @@ function App() {
             },
             body: JSON.stringify(data)
         })
+        console.log('4');
     }, [])
 
     useEffect(() => {
+        console.log('5');
         tg.onEvent('mainButtonClicked', onSendData);
         return () => {
             tg.offEvent('mainButtonClicked', onSendData);
