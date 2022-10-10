@@ -1,42 +1,14 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { Item } from '../Item/Item'
-import cl from '../../styles/List.module.css'
-import { useTelegram } from '../../hooks/useTelegram';
+import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useTelegram } from '../../hooks/useTelegram';
 import { products } from '../../products/products';
-
-const getTotalPrice = (items = []) => {
-    return items.reduce((acc, item) => {
-        return acc += item.price
-    }, 0)
-}
+import cl from '../../styles/List.module.css';
+import { Item } from '../Item/Item';
 
 export const ProductList = () => {
-    const [addedItems, setAddedItems] = useState([]);
     const params = useParams();
-    const {tg, queryId} = useTelegram();
-
-    const onSendData = useCallback(() => {
-        const data = {
-            products: addedItems,
-            totalPrice: getTotalPrice(addedItems),
-            queryId
-        }
-        fetch('http://localhost:8000', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-    }, [])
-
-    useEffect(() => {
-        tg.onEvent('mainButtonClicked', onSendData);
-        return () => {
-            tg.offEvent('mainButtonClicked', onSendData);
-        }
-    }, [onSendData])
+    const {tg} = useTelegram();
+    const {addedItems, setAddedItems, getTotalPrice} = useTelegram();
 
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
