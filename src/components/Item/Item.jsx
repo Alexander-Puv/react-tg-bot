@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ProductsContext } from '../../context/context';
 import { Button } from '../Button/Button';
 import cl from './Item.module.css';
 
 export const Item = ({item, className, link, onAdd}) => {
     const [isInCart, setIsInCart] = useState(false);
     const navigate = useNavigate()
+    const {addedItems} = useContext(ProductsContext);
+
+    useEffect(() => {
+        if (addedItems.find(i => i.id === item.id)) {
+            setIsInCart(true)
+        }
+    }, [])
     
     const onAddHandler = () => {
         onAdd(item);

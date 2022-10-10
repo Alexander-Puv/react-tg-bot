@@ -12,9 +12,8 @@ export const ProductList = () => {
     const {addedItems, setAddedItems, getTotalPrice} = useContext(ProductsContext);
 
     const onAdd = (product) => {
-        /* products[params.id-1]; */
-        console.log(product.id);
         const alreadyAdded = addedItems.find(item => item.id === product.id);
+        console.log(alreadyAdded);
         let newItems = [];
 
         if (alreadyAdded) {
