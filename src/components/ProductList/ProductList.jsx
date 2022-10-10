@@ -11,7 +11,7 @@ export const ProductList = () => {
     const {addedItems, setAddedItems, getTotalPrice} = useTelegram();
 
     const onAdd = (product) => {
-        console.log('1');
+        alert('1');
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
 
@@ -31,7 +31,7 @@ export const ProductList = () => {
                 text: `Buy ${newItems.length} items for ${getTotalPrice(newItems)}$`
             })
         }
-        console.log('2');
+        alert('2');
     }
 
     return (
