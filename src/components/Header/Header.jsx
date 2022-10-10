@@ -5,7 +5,7 @@ import { Button } from '../Button/Button';
 import cl from './Header.module.css';
 
 export const Header = () => {
-    const {user, onClose} = useTelegram();
+    const {onClose} = useTelegram();
     const navigate = useNavigate();
     
     return (

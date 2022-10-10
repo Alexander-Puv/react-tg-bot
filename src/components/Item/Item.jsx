@@ -30,7 +30,7 @@ export const Item = ({item, className, link, onAdd}) => {
             <div className={cl.price}>
                 <span>Price: <b>{item.price}$</b></span>
             </div>
-            <Button className={cl.addBtn} onClick={onAddHandler}>{!isInCart ? 'Add to cart' : 'Remove from cart'}</Button>
+            <Button onClick={onAddHandler}>{!isInCart ? 'Add to cart' : 'Remove from cart'}</Button>
         </div>}</>
     )
 }
