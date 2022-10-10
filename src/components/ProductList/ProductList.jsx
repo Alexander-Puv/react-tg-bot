@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { ProductsContext } from '../../context/context';
 import { useTelegram } from '../../hooks/useTelegram';
 import { products } from '../../products/products';
 import cl from '../../styles/List.module.css';
@@ -8,10 +9,10 @@ import { Item } from '../Item/Item';
 export const ProductList = () => {
     const params = useParams();
     const {tg} = useTelegram();
-    const {addedItems, setAddedItems, getTotalPrice} = useTelegram();
+    const {addedItems, setAddedItems, getTotalPrice} = useContext(ProductsContext);
+    console.log(addedItems);
 
     const onAdd = (product) => {
-        alert('1');
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
 
@@ -31,7 +32,6 @@ export const ProductList = () => {
                 text: `Buy ${newItems.length} items for ${getTotalPrice(newItems)}$`
             })
         }
-        alert('2');
     }
 
     return (
