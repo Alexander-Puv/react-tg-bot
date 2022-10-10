@@ -13,6 +13,7 @@ export const ProductList = () => {
 
     const onAdd = (product) => {
         /* products[params.id-1]; */
+        console.log(product.id);
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
 
